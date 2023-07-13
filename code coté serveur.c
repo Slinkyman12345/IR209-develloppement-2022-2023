@@ -6,6 +6,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <errno.h>
+#include <readline/readline.h>
+#include <readline/history.h>
 
 #define BUFFER_SIZE 1024
 
@@ -47,7 +49,6 @@ int main(int argc, char *argv[]) {
 
     int serverSocket, clientSocket;
     struct sockaddr_in serverAddress, clientAddress;
-    char command[BUFFER_SIZE];
     char response[BUFFER_SIZE];
 
     // Créer une socket
@@ -96,19 +97,11 @@ int main(int argc, char *argv[]) {
     int stopReceived = 0;
 
     while (!stopReceived) {
-        // Réinitialiser les buffers
-        memset(command, 0, sizeof(command));
-        memset(response, 0, sizeof(response));
-
         // Recevoir la commande du client
-        ssize_t bytesRead = recv(clientSocket, command, BUFFER_SIZE - 1, 0);
-        if (bytesRead < 0) {
-            printf("Erreur lors de la réception des données : %s\n", strerror(errno));
-            exit(1);
-        }
+        char *command = readline("> ");
 
         // Vérifier si la commande est "stop"
-        if (strcmp(command, "stop\n") == 0) {
+        if (strcmp(command, "stop") == 0) {
             stopReceived = 1;
         } else {
             // Exécuter la commande en tant que root
@@ -120,7 +113,13 @@ int main(int argc, char *argv[]) {
                 printf("Erreur lors de l'envoi des données : %s\n", strerror(errno));
                 exit(1);
             }
+
+            // Ajouter la commande à l'historique
+            add_history(command);
         }
+
+        // Libérer la mémoire allouée par readline
+        free(command);
     }
 
     // Fermer la connexion client
