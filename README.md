@@ -82,6 +82,10 @@ Tout code emprunté doit être dûment référencé. Le plagiat est inacceptable
 
 ## 🗺️ Roadmap <a name="roadmap"></a>
 
+- [x] Création d'un code de base pour le projet
+- [x] Modification du code poure le rendre plus lisible
+- [x] Avoir un code client
+- [x] Avoir un code server
 - [x] Gestion propre de l'arrêt du malware 
 - [x] Gestion des versions
 - [x] Gestion intelligente des erreurs
