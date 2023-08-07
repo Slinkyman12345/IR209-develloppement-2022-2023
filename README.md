@@ -1,6 +1,6 @@
 # Projet C (Seconde session): Implémentation d’un Remote Shell
 
-**Auteurs:** Kyllian Louis 
+**Auteur:** Kyllian Louis  
 **Cours:** Développement - IR209  
 **Institution:** Henallux  
 **Année académique:** 2022-2023  
@@ -16,13 +16,13 @@
 8. [Le plagiat](#le-plagiat)
 
 ## Introduction
-Le projet consiste à implémenter un Remote Shell en langage C. L'objectif est de créer une interface permettant à un attaquant d'exécuter des commandes à distance sur une machine infectée, en utilisant un serveur (côté victime) et un client (côté attaquant). Ce projet vise à démontrer la compréhension de l'utilisation des sockets pour la communication réseau, ainsi que la mise en œuvre de commandes système de base.
+Le projet consiste à implémenter un **Remote Shell** en langage C. L'objectif est de créer une interface permettant à un attaquant d'exécuter des commandes à distance sur une machine infectée, en utilisant un serveur (côté victime) et un client (côté attaquant). Ce projet vise à démontrer la compréhension de l'utilisation des sockets pour la communication réseau, ainsi que la mise en œuvre de commandes système de base.
 
 ## Architecture d'un remote shell
-Le système se compose d'un serveur en boucle d'écoute sur un port défini, et d'un client qui se connecte au serveur. Le client envoie des commandes au serveur, qui les exécute et renvoie les résultats.
+Le système se compose d'un serveur en boucle d'écoute sur un port défini, et d'un client qui se connecte au serveur. Le client envoie des commandes au serveur, qui les exécute et renvoie les résultats. Veuillez consulter le schéma d'architecture dans la section [Architecture du système](#architecture-du-système).
 
 ## Utilisation des sockets
-La communication entre le client et le serveur se fait à l'aide de sockets. Les messages échangés sont des flux de bytes, nécessitant une conversion appropriée en chaînes de caractères. Cette communication ce fait en TCP.
+La communication entre le client et le serveur se fait à l'aide de sockets. Les messages échangés sont des flux de bytes, nécessitant une conversion appropriée en chaînes de caractères. Cette communication se fait en **TCP**.
 
 ## Évaluation
 ### Acquis d'apprentissage
@@ -38,7 +38,7 @@ Le projet doit respecter les contraintes suivantes :
 - Exécution des commandes de base (whoami, ifconfig, cat /etc/passwd) et renvoi des résultats.
 
 ## Avertissement
-La compréhension du code est primordiale en privilégiant un code simple et propre, capable d'être expliqué en détail. L'ajout de fonctionnalités supplémentaires doit être justifié et compris.
+La compréhension du code est primordiale. Il est recommandé de privilégier un code simple et propre, capable d'être expliqué en détail. L'ajout de fonctionnalités supplémentaires doit être justifié et compris.
 
 ## Modalités pratiques
 - Projet individuel.
@@ -54,4 +54,3 @@ Le projet doit être soumis sur Moodle avant le 13/08/2023 à 23h59. Le délivra
 
 ## Le plagiat
 Tout code emprunté doit être dûment référencé. Le plagiat est inacceptable et entraînera une note de zéro.
-
