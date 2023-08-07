@@ -19,7 +19,7 @@
 Le projet consiste à implémenter un **Remote Shell** en langage C. L'objectif est de créer une interface permettant à un attaquant d'exécuter des commandes à distance sur une machine infectée, en utilisant un serveur (côté victime) et un client (côté attaquant). Ce projet vise à démontrer la compréhension de l'utilisation des sockets pour la communication réseau, ainsi que la mise en œuvre de commandes système de base.
 
 ## Architecture d'un remote shell
-Le système se compose d'un serveur en boucle d'écoute sur un port défini, et d'un client qui se connecte au serveur. Le client envoie des commandes au serveur, qui les exécute et renvoie les résultats. Veuillez consulter le schéma d'architecture dans la section [Architecture du système](#architecture-du-système).
+Le système se compose d'un serveur en boucle d'écoute sur un port défini, et d'un client qui se connecte au serveur. Le client envoie des commandes au serveur, qui les exécute et renvoie les résultats.
 
 ## Utilisation des sockets
 La communication entre le client et le serveur se fait à l'aide de sockets. Les messages échangés sont des flux de bytes, nécessitant une conversion appropriée en chaînes de caractères. Cette communication se fait en **TCP**.
