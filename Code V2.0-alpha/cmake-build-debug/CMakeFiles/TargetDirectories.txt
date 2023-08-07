@@ -1,0 +1,4 @@
+/home/kali/Desktop/projet/cmake-build-debug/CMakeFiles/client.dir
+/home/kali/Desktop/projet/cmake-build-debug/CMakeFiles/server.dir
+/home/kali/Desktop/projet/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kali/Desktop/projet/cmake-build-debug/CMakeFiles/rebuild_cache.dir

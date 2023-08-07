@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/server.dir/code/server.c.o CMakeFiles/server.dir/code/receiver.c.o CMakeFiles/server.dir/code/sender.c.o CMakeFiles/server.dir/code/encryption.c.o -o server  -lcrypto 
