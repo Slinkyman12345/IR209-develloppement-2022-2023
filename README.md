@@ -78,6 +78,57 @@ Tout code emprunté doit être dûment référencé. Le plagiat est inacceptable
 
 ## 💻 Code <a name="code"></a>
 
+### Server.c 
+
+
+Serveur de Commandes Sécurisé en C
+Ce code source représente un programme en langage C qui met en œuvre un serveur de commandes sécurisé. Voici une explication détaillée des fonctionnalités du code :
+
+Contenu
+Inclusions de Bibliothèques : Le code débute en incluant plusieurs bibliothèques nécessaires pour les manipulations de sockets, les opérations sur les chaînes de caractères, la gestion des fichiers et le chiffrement. Les fichiers d'en-tête inclus sont <stdio.h>, <stdlib.h>, <string.h>, <unistd.h>, <sys/socket.h>, <netinet/in.h>, <arpa/inet.h> et <errno.h>. En outre, il intègre les fichiers d'en-tête personnalisés "sender.h", "receiver.h" et "encryption.h".
+
+Redefinition de stderr : Le code redéfinit stderr comme stdout. Cela signifie que les erreurs standard seront affichées sur la sortie standard plutôt que sur la sortie d'erreur standard.
+
+Définition des Constantes : Il définit une constante BUFFER_SIZE avec la valeur 1024. Cette constante est utilisée pour déterminer la taille des tampons de données.
+
+Clés de Chiffrement : Le code définit deux tableaux de caractères, KEY et IV, qui servent respectivement de clé et de vecteur d'initialisation (IV) pour les opérations de chiffrement et de déchiffrement. Ces valeurs sont fournies à titre d'exemple et devraient être gérées de manière plus sécurisée dans un environnement de production.
+
+Fonction Principale (main) :
+
+Vérification des Arguments : Le programme commence par vérifier si le nombre d'arguments passés en ligne de commande est différent de 2. Si ce n'est pas le cas, il affiche comment utiliser le programme et se termine avec le code de sortie 1.
+
+Vérification des Privilèges de Root : Ensuite, il vérifie si le programme est exécuté avec les privilèges de root en utilisant la fonction getuid(). Si ce n'est pas le cas, il affiche un message d'erreur et se termine avec le code de sortie 1.
+
+La suite du code gère la mise en place d'un serveur TCP qui écoute les connexions entrantes et traite les commandes reçues des clients :
+
+Création de la Socket : Il crée une socket en utilisant socket(AF_INET, SOCK_STREAM, 0) et vérifie si la création réussit.
+
+Configuration de l'Adresse du Serveur : Il configure l'adresse du serveur en utilisant une structure sockaddr_in (serverAddress) et initialise le port et l'adresse IP.
+
+Réutilisation de l'Adresse et du Port : Il configure la socket pour réutiliser l'adresse et le port même en cas de déconnexion brutale en utilisant setsockopt.
+
+Liaison de la Socket : Il lie la socket à l'adresse IP et au port en utilisant bind() et vérifie si l'opération réussit.
+
+Mise en Écoute : Il met la socket en mode écoute en utilisant listen() et vérifie si l'opération réussit.
+
+Acceptation de Connexion : Il accepte une connexion entrante en utilisant accept(). Une fois la connexion établie, il affiche l'adresse IP et le port du client connecté.
+
+La boucle principale du programme (marquée par while (1)) traite les commandes reçues du client :
+
+Réception de la Commande : Il reçoit une commande du client en utilisant une fonction appelée receive_command() (définie dans "receiver.h").
+
+Déchiffrement de la Commande : Il déchiffre la commande reçue en utilisant la fonction decrypt() (définie dans "encryption.h") avec la clé et le vecteur d'initialisation définis précédemment.
+
+Vérification de la Commande "exit" : Il vérifie si la commande contient le mot "exit". Si c'est le cas, il envoie une réponse au client indiquant que le serveur a reçu la commande "exit".
+
+Exécution de la Commande : Si la commande ne contient pas "exit", il exécute la commande reçue en utilisant la fonction popen(), ce qui permet d'exécuter la commande en tant que processus. Ensuite, il lit la sortie de la commande et l'envoie au client.
+
+Chiffrement et Envoi de la Réponse : Avant d'envoyer la réponse au client, il chiffre la sortie de la commande à l'aide de la fonction encrypt() et envoie la réponse chiffrée au client en utilisant une fonction appelée send_response() (définie dans "sender.h").
+
+Le code continue de boucler et de traiter les commandes jusqu'à ce qu'une erreur se produise ou que le programme soit arrêté manuellement.
+
+#### En cours de rédaction 
+
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
 ## 🗺️ Roadmap <a name="roadmap"></a>
