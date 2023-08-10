@@ -29,7 +29,8 @@
     <li><a href="#modalités-pratiques">📜 Modalités pratiques</a></li>
     <li><a href="#délivrable">📦 Délivrable</a></li>
     <li><a href="#le-plagiat">⚖️ Le plagiat</a></li>
-    <li><a href="#Code">💻 Code</a></li>
+    <li><a href="#Instruction">📝 Instruction</a></li>
+    <li><a href="#code">💻 Code</a></li>
     <li><a href="#roadmap">🗺️ Roadmap</a></li>
   </ol>
 </details>
@@ -73,6 +74,55 @@ Le projet doit être soumis sur Moodle avant le 13/08/2023 à 23h59. Le délivra
 
 ## ⚖️ Le plagiat <a name="le-plagiat"></a>
 Tout code emprunté doit être dûment référencé. Le plagiat est inacceptable et entraînera une note de zéro.
+
+## 📝 Instruction <a name="Instruction"></a>
+
+### Compilation: 
+
+afin de compilé correctement le programme vous devez :
+
+1. Changer les chemins de dossier dans les fichiers :
+  - ./CMakeLists.txt
+  - ./cmake-build-debug/CMakeCache.txt
+
+2. Vous rendre dans le dossier build et exécuter les deux commandes suivante :
+
+```bash
+
+kali: cmake ..
+kali: make
+
+```
+En cas d'erreur lors du "cmake ..", cela veux dire qu'un chemin de dossier n'est pas le même que le votre, vous devrez aller le changer. 
+
+Une fois compiler, vous trouverez dans le dossier build un programme client et un programme serveur.
+
+### Utilisation: 
+
+Pour utilisé ses programmes, vous aurez besoin de deux machines kali linux connecté entre elles.
+
+Une machine sera la victime, la où le programme "server" tournera. Pour le lancer, utiliser la commande suivante :
+
+```bash
+
+sudo ./server [PORT]
+
+```
+
+Une foix exécuté, le serveur sera en mode écoute. Il est important de le lancer en premier.
+
+L'autre machine, sera la machine attaquant, la où le programme "client" tournera. Pour le lancer, utiliser la commande suivante :
+
+```bash
+
+sudo ./client [IP SERVEUR] [PORT]
+
+```
+
+Une foix exécuté, si la connexion entre les deux machines focntionnes correctement, vous pourrez exécuter les commandes comme "whoami, ls, etc".
+
+utilisé la commande "exit" pour arrêter le programme.
+
 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
