@@ -29,7 +29,7 @@
     <li><a href="#modalités-pratiques">📜 Modalités pratiques</a></li>
     <li><a href="#délivrable">📦 Délivrable</a></li>
     <li><a href="#le-plagiat">⚖️ Le plagiat</a></li>
-    <li><a href="#Instruction">📝 Instruction</a></li>
+    <li><a href="#instruction">📝 Instruction</a></li>
     <li><a href="#code">💻 Code</a></li>
     <li><a href="#roadmap">🗺️ Roadmap</a></li>
   </ol>
@@ -75,7 +75,7 @@ Le projet doit être soumis sur Moodle avant le 13/08/2023 à 23h59. Le délivra
 ## ⚖️ Le plagiat <a name="le-plagiat"></a>
 Tout code emprunté doit être dûment référencé. Le plagiat est inacceptable et entraînera une note de zéro.
 
-## 📝 Instruction <a name="Instruction"></a>
+## 📝 Instruction <a name="instruction"></a>
 
 ### Compilation: 
 
