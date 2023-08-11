@@ -192,7 +192,7 @@ Le code continue de boucler et de traiter les commandes jusqu'à ce qu'une erreu
 - [x] Gestion intelligente des erreurs
 - [ ] Déplacement d'un répertoire à un autre
 - [ ] Chiffrement des communications
-    - [x] Chiffrement avec clé fixe
+    - [ ] Chiffrement avec clé fixe
     - [ ] Chiffrement avec clé générée
 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
