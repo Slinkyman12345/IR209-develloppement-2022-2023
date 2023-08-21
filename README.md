@@ -196,3 +196,9 @@ Le code continue de boucler et de traiter les commandes jusqu'à ce qu'une erreu
     - [ ] Chiffrement avec clé générée
 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
+
+## Source 
+
+- Makefile : Blackbox.ai | https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ | https://www.youtube.com/watch?v=_r7i5X0rXJk
+- Code : cours de dévelloppement IR209 | https://www.cs.rpi.edu/~moorthy/Courses/os98/Pgms/socket.html
+- Possible aide externe : Blackbox.ai
